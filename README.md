@@ -45,7 +45,8 @@ require('./my-lovely-shader.glsl`;
 
 ### On command line
 
-You can also define the module extension bind on the command line.
+You can also define the module extension bind on the command line if you are
+not using a configuration file (you probably should be though).
 
 ```shell
 webpack --module-bind 'glsl=webpack-glsl'
@@ -60,7 +61,7 @@ very similar to that of SASS.
 
 ### Example
 
-File hierarchy:
+Example project structure:
 ```
 src/
 ---- js/
@@ -74,9 +75,7 @@ src/
 If I require my fragment shader inside `main.js`:
 
 ```javascript
-...
 var shader = require('../glsl/fragment.glsl');
-...
 ```
 
 I can have that shader include other `.glsl` files inline, like so:
@@ -87,3 +86,12 @@ I can have that shader include other `.glsl` files inline, like so:
 
 > **N.B.** all imports within `.glsl` files exclude the file extension and 
 are relative to the file doing the importing.
+
+Imported files are parsed for `@import` statements as well, so you can nest
+imports as deep as you'd like (although, you should probably rethink your
+shader if you require any more than 2 levels).
+
+Imported files are inserted directly into the source file in place of the
+`@import` statement and no special handling or error checking is provided. So,
+if you get syntax errors, please first check that shader works as one 
+contiguous file before raising an issue.
