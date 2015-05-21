@@ -98,6 +98,6 @@ contiguous file before raising an issue.
 
 ## TODO
 
-+ Deduplicate imports, to precent code clobbering and conflicts at runtime
++ Deduplicate imports, to prevent code clobbering and conflicts at runtime
 + Make loader file extension agnostic, to allow for you odd people who use
 other extensions like `.vert` and `.frag`.
