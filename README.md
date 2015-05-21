@@ -14,9 +14,9 @@ npm install --save-dev webpack-glsl-loader
 
 ### With `require`
 
-> **N.B.** As noted in the [webpack documentation](http://webpack.github.io/docs/using-
-loaders.html#loaders-in-require), you should avoid using this and use the 
-configuration method in the next section.
+> **N.B.** As noted in the [webpack documentation](
+http://webpack.github.io/docs/using-loaders.html#loaders-in-require), you
+should avoid using this and use the configuration method in the next section.
 
 ```javascript
 require('webpack-glsl!./my-lovely-shader.glsl`;
@@ -95,3 +95,9 @@ Imported files are inserted directly into the source file in place of the
 `@import` statement and no special handling or error checking is provided. So,
 if you get syntax errors, please first check that shader works as one 
 contiguous file before raising an issue.
+
+## TODO
+
++ Deduplicate imports, to precent code clobbering and conflicts at runtime
++ Make loader file extension agnostic, to allow for you odd people who use
+other extensions like `.vert` and `.frag`.
