@@ -19,7 +19,7 @@ http://webpack.github.io/docs/using-loaders.html#loaders-in-require), you
 should avoid using this and use the configuration method in the next section.
 
 ```javascript
-require('webpack-glsl!./my-lovely-shader.glsl`;
+require('webpack-glsl!./my-lovely-shader.glsl`);
 ```
 
 ### In configuration
@@ -40,7 +40,7 @@ require('webpack-glsl!./my-lovely-shader.glsl`;
 and then
 
 ```javascript
-require('./my-lovely-shader.glsl`;
+require('./my-lovely-shader.glsl`);
 ```
 
 ### On command line
