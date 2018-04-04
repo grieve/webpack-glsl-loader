@@ -59,6 +59,6 @@ module.exports = function(source) {
             return cb(err);
         }
 
-        cb(null, 'module.exports = ' + JSON.stringify(bld));
+        cb(null, 'export default ' + JSON.stringify(bld));
     });
 };
