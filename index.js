@@ -6,7 +6,7 @@ var path = require('path');
 
 function parse(loader, source, context, cb) {
     var imports = [];
-    var importPattern = /#include "([.\/\w_-]+)";/gi;
+    var importPattern = /#include "([.\/\w_-]+)"/gi;
     var match = importPattern.exec(source);
 
     while (match != null) {
@@ -28,7 +28,7 @@ function processImports(loader, source, context, imports, cb) {
 
     var imp = imports.pop();
 
-    loader.resolve(context, imp.key, function(err, resolved) {
+    loader.resolve(context, './' + imp.key, function(err, resolved) {
         if (err) {
             return cb(err);
         }
