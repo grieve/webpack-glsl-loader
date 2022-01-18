@@ -28,7 +28,7 @@ function processImports(loader, source, context, imports, cb) {
 
     var imp = imports.pop();
 
-    loader.resolve(context, './' + imp.key, function(err, resolved) {
+    loader.resolve(context, imp.key, function(err, resolved) {
         if (err) {
             return cb(err);
         }
